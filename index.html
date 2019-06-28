@@ -10,6 +10,21 @@
 
     </head>
   <body>
+    <script>
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", deviceOrientationListener);
+      } else {
+        if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
+        {
+           alert("ios");
+        }
+        
+        else {
+          alert("Android users");
+        }
+      }
+    </script>
+    
       <a-scene renderer="foveationLevel:3;">
                 <a-entity id="particles1" scale="0.2 0.2 0.2" position="0 15  4" particle-system="preset: dust; color: #FFFFFF; blending: 1; texture: https://static.wixstatic.com/media/a0a345_3cf7ac2a50aa4b62af997e42965826e2~mv2.png; accelerationSpread: 0 1 0;  accelerationValue: 0 0 0; randomize: true;   rotationAngle: 90;  rotationAxis: x;  size: 0.2; type: 2; velocitySpread: 0 1 0; velocityValue: 0 1 0;  duration: 1000; direction: 1; opacity: 0.8; particleCount: 800; "></a-entity>
                 <a-entity id="particles2" scale="0.2 0.2 0.2" position="0 15  8" particle-system="preset: dust; color: #FFFFFF; blending: 1; texture: https://static.wixstatic.com/media/a0a345_2269e93fa3b045e79137cffad3332b0f~mv2.png; accelerationSpread: 0 2 0;  accelerationValue: 0 0 0; randomize: false;  rotationAngle: 90;  rotationAxis: z;  size: 0.2; type: 2; velocitySpread: 0 2 0; velocityValue: 0 5 0;  duration: 1000; direction: 1; opacity: 0.7; particleCount: 800; "></a-entity>
